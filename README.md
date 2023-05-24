@@ -102,39 +102,63 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
 ### Procedure
-/* write all the steps invloved */
+1.Using nand gates and wires construct sr flip flop.
 
+2.Repeat same steps to construct JK,D,T flipflops.
 
+3.Find Rtl logic and timing diagram for all flipflops.
 
+4.End the program.
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: shaik sameer basha
+RegisterNumber:  212222240093
+*/
+#### program1
+/*
+module ex6(s,r,clk,Q,Qbar);
+input s,r,clk;
+output Q,Qbar;
+reg Q,Qbar;
+always@(posedge clk)
+begin
+	Q <= s|(~r & Q);
+	Qbar<= r|(~s & ~Q);
+end
+endmodule
+*/
+#### program2
+/*
+module filpflop2(j,k,clk,Q,Qbar);
+input j,k,clk;
+output Q,Qbar;
+reg Q,Qbar;
+always @(posedge clk)
+begin
+	Q<=(j&~Q)|(~k&Q);
+	Qbar<= ~Q;
+end
+endmodule
 */
 
-
-
-
-
-
 ### RTL LOGIC FOR FLIPFLOPS 
-
-
-
-
-
-
-
-
-
+#### RTL 1
+![de ss 1](https://github.com/shaikSameerbasha5404/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707756/b6b12de8-880d-44db-a232-a91adcf15040)
+#### RTL 2
+![de ss 3](https://github.com/shaikSameerbasha5404/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707756/a5decab2-25ea-4068-bb64-a1fb71b4564e)
+#### RTL 3
+![de ss 5](https://github.com/shaikSameerbasha5404/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707756/d4b9898b-de8e-4e12-8b56-02915017ca39)
+#### RTL 4
+![de ss 7](https://github.com/shaikSameerbasha5404/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707756/627aad10-02ab-478c-80bf-c2bf25a09b85)
 ### TIMING DIGRAMS FOR FLIP FLOPS 
-
-
-
-
-
-
-
-
+#### timing diagram1:
+![de ss 2](https://github.com/shaikSameerbasha5404/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707756/66786bcd-993e-406f-88ee-e11dfb7bd21e)
+#### timing diagram2:
+![de ss 4](https://github.com/shaikSameerbasha5404/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707756/6c48797c-1565-42e3-8092-d3ebf346617b)
+#### timing diagram3:
+![de ss 6](https://github.com/shaikSameerbasha5404/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707756/9985f5b5-8f11-487b-9614-ea53ad7d2e8e)
+#### timing diagram4:
+![de ss 8](https://github.com/shaikSameerbasha5404/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707756/6fef2dc3-f809-4d0b-a146-06a6c62edb74)
 ### RESULTS 
+Thus implementation of SR,JK,D and T flipflops using nand gates are done sucessfully.
