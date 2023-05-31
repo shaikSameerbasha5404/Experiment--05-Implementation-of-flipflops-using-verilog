@@ -110,13 +110,11 @@ Q(t+1)=T′Q(t)+TQ(t)′
 
 4.End the program.
 ### PROGRAM 
-/*
+```python
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by: shaik sameer basha
 RegisterNumber:  212222240093
-*/
 #### program1
-/*
 module ex6(s,r,clk,Q,Qbar);
 input s,r,clk;
 output Q,Qbar;
@@ -127,9 +125,7 @@ begin
 	Qbar<= r|(~s & ~Q);
 end
 endmodule
-*/
 #### program2
-/*
 module filpflop2(j,k,clk,Q,Qbar);
 input j,k,clk;
 output Q,Qbar;
@@ -140,8 +136,33 @@ begin
 	Qbar<= ~Q;
 end
 endmodule
-*/
-
+#### program3
+module flipflops(D,clk,Q,Qbar);
+input D,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=D;
+Qbar=~D;
+end
+endmodule
+#### program4
+module flipflops(T,clk,Q,Qbar);
+input T,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=(T&(~Q))|((~T)&Q);
+Qbar=((~T)&Qbar)|(T&(~Qbar));
+end
+endmodule
+```
 ### RTL LOGIC FOR FLIPFLOPS 
 #### RTL 1
 ![de ss 1](https://github.com/shaikSameerbasha5404/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707756/b6b12de8-880d-44db-a232-a91adcf15040)
